@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="dark" style="height: 60px; ">
+    <ion-card-header>
+      <ion-card-title
+        style="text-align: center;  font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 0px; color: white;">ProductoSeleccionado
+      </ion-card-title>
+    </ion-card-header>
+    <ion-buttons slot="end" class="endx" (click)="exit()" style=" background: #ffffff ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x-circle"
+        viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+      </svg>
+    </ion-buttons>
+    <ion-back-button></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" class="content-wrapper">
+  <div class="content-inner">
+        <ion-col  sizeMd="4" offsetMd="4">
+          <div  class="caracteristica1"  *ngFor="let chracter of products; ">
+            <ion-card   class="ion-text-center">
+              <ion-card-content>
+                <img src="{{chracter.foto}}" alt="">
+                <ion-card-title class="card">
+                  {{chracter.nombre}}
+                </ion-card-title>
+              </ion-card-content>
+            </ion-card>
+          </div>
+
+          <div class="caracteristica"  *ngFor="let chracter of products; " >
+          <br>
+          <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Caracteristicas</h1>
+            # {{chracter.id}}<br>
+            Nombre:  {{chracter.nombre}}<br>
+            descripcion:  {{chracter.descripcion}}<br>
+            precio:  {{chracter.precio}}<br>
+            stock:  {{chracter.stock}}<br>
+            fecha_creacion:  {{chracter.fecha_creacion}}<br>
+            Usuario:  {{chracter.id_usuario}}<br>
+            {{chracter.name}}<br>
+            {{chracter.url}}   
+            <ion-img src="/assets/icon/autor.png">
+            </ion-img><br><br>
+            </div>
+      </ion-col>
+  </div>
+</ion-content>
